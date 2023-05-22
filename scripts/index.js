@@ -1,6 +1,7 @@
 import {initialCards} from './array.js';
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
+// import Section from './Section.js';
 
 const container = document.querySelector('.page');
 const formProfileEdit = container.querySelector('.popup__form');
