@@ -64,7 +64,7 @@ addImageButton.addEventListener('click', () => {
 
 function createNewCard(cardData) {
   const card = new Card(cardData, templateSelector, () => {
-    popupAddImage.open(cardData)
+    openImage.open(cardData)
   })
   const cardElement = card.createCard()
   return cardElement
