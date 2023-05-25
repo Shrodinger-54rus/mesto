@@ -44,7 +44,7 @@ popupUserInfo.setEventListener()
 const popupAddImage = new PopupWithForm(addImagePopup, (inputValues) => {
   renderCardElement({
     name: inputValues.name,
-    lonk: inputValues.link,
+    link: inputValues.link,
   })
   popupAddImage.close()
 })

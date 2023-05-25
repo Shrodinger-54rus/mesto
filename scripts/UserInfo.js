@@ -14,6 +14,6 @@ export default class UserInfo {
 
   setUserInfo(inputsUserInfo) {
     this._nameSelector.textContent = inputsUserInfo.name
-    this._aboutMeSelector.textContent = inputsUserInfo.aboutMe
+    this._aboutMeSelector.textContent = inputsUserInfo.job
   }
 }
