@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="icon" href="./images/Favicon.svg" />
+    <link rel="icon" href="<%=require('./images/Favicon.svg')%>" />
     <title>Место</title>
   </head>
   <body class="page">
     <header class="header">
       <img
-        src="./images/header-logo.svg"
+        src="<%=require('./images/header-logo.svg')%>"
         alt="логотип сайта"
         class="header__logo"
       />
@@ -19,7 +18,7 @@
       <section class="profile">
         <div class="profile__container">
           <img
-            src="./images/profile-photo.jpg"
+            src="<%=require('./images/profile-photo.jpg')%>"
             alt="аватар"
             class="profile__avatar"
           />
@@ -139,21 +138,13 @@
           type="button"
           aria-label="Закрыть"
         ></button>
-        <img
-          src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg"
-          alt="увеличенное фото"
-          class="image-show__item"
-        />
+        <img src="" alt="" class="image-show__item" />
         <figcaption class="image-show__caption">Байкал</figcaption>
       </figure>
     </div>
     <template class="photo-template">
       <article class="photo-grid__item">
-        <img
-          src="./images/elbrus.jpg"
-          alt="фото в вашем альбоме"
-          class="photo-grid__image"
-        />
+        <img src="" alt="" class="photo-grid__image" />
         <button
           class="photo-grid__delete-button button"
           type="button"
