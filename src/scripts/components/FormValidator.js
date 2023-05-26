@@ -57,4 +57,13 @@ export default class FormValidator {
       this._setValidationListener(input)
     })
   }
+
+  resetValidation() {
+    this._inputsArray.forEach((input) => {
+      const errorMessage = document.querySelector(`#${input.id}-error`)
+      input.classList.remove(this._inputErrorClass)
+      errorMessage.classList.remove(this._errorClass)
+      errorMessage.textContent = ''
+    })
+  }
 }

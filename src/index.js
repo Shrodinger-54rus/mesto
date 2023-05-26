@@ -65,12 +65,15 @@ function renderCardElement(cardData) {
 
 editProfileButton.addEventListener('click', () => {
   popupUserInfo.open()
+  profileValidator.resetValidation()
+
   inputName.value = userInfo.getUserInfo().name
   inputAboutMe.value = userInfo.getUserInfo().aboutMe
 })
 
 addImageButton.addEventListener('click', () => {
   popupAddImage.open()
+  cardValidator.resetValidation()
   cardValidator.disableButton()
 })
 

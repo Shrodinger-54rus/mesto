@@ -8,7 +8,7 @@ export default class PopupWithForm extends Popup {
     this._inputs = Array.from(this._form.querySelectorAll('.popup__input'))
   }
 
-  _getImputValues() {
+  _getInputValues() {
     const inputValues = {}
     this._inputs.forEach((input) => {
       inputValues[input.name] = input.value
@@ -20,7 +20,7 @@ export default class PopupWithForm extends Popup {
     super.setEventListener()
     this._form.addEventListener('submit', (e) => {
       e.preventDefault()
-      this._formSubmit(this._getImputValues())
+      this._formSubmit(this._getInputValues())
       this.close()
     })
   }

@@ -44,8 +44,4 @@ export default class Card {
 
     return this._cardElement
   }
-
-  _openImage() {
-    this._handleCardClick(this._data)
-  }
 }
