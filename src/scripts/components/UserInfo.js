@@ -1,7 +1,8 @@
 export default class UserInfo {
-  constructor(nameSelector, aboutMeSelector) {
+  constructor(nameSelector, aboutMeSelector, userAvatarSelector) {
     this._nameSelector = nameSelector
     this._aboutMeSelector = aboutMeSelector
+    this._userAvatarSelector = userAvatarSelector
   }
 
   getUserInfo() {
@@ -12,8 +13,9 @@ export default class UserInfo {
     return inputsUserInfo
   }
 
-  setUserInfo(inputsUserInfo) {
-    this._nameSelector.textContent = inputsUserInfo.name
-    this._aboutMeSelector.textContent = inputsUserInfo.job
+  setUserInfo({ name, job, avatar }) {
+    this._nameSelector.textContent = name
+    this._aboutMeSelector.textContent = job
+    this._userAvatarSelector.src = avatar
   }
 }

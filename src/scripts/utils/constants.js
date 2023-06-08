@@ -10,13 +10,26 @@ export const editProfileButton = container.querySelector('.profile__edit')
 export const addImagePopup = container.querySelector('.popup_add-image')
 export const addImageButton = container.querySelector('.profile__add')
 export const imagePopup = document.querySelector('.popup_image-show')
-export const editProfileForm = container.querySelector(
-  '.popup__form_type_edit-profile'
+
+export const templateSelector = '.photo-template'
+export const avatarEditPopup = container.querySelector('.popup_avatar')
+export const confirmPopup = container.querySelector('.popup_confirm')
+export const avatarEditButton = container.querySelector(
+  '.profile__avatar_type_edit'
 )
+export const popupAvatarItem = container.querySelector(
+  '.profile__avatar_type_item'
+)
+
+export const avatarForm = container.querySelector('.popup__form_type_avatar')
 export const addImageForm = container.querySelector(
   '.popup__form_type_new-image'
 )
-export const templateSelector = '.photo-template'
+export const editProfileForm = container.querySelector(
+  '.popup__form_type_edit-profile'
+)
+
+export const cardsContainer = document.querySelector('.photo-grid')
 export const config = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
