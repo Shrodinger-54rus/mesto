@@ -14,12 +14,8 @@ export const imagePopup = document.querySelector('.popup_image-show')
 export const templateSelector = '.photo-template'
 export const avatarEditPopup = container.querySelector('.popup_avatar')
 export const confirmPopup = container.querySelector('.popup_confirm')
-export const avatarEditButton = container.querySelector(
-  '.profile__avatar_type_edit'
-)
-export const popupAvatarItem = container.querySelector(
-  '.profile__avatar_type_item'
-)
+export const avatarEditButton = container.querySelector('.profile__avatar-edit')
+export const popupAvatarItem = container.querySelector('.profile__avatar-item')
 
 export const avatarForm = container.querySelector('.popup__form_type_avatar')
 export const addImageForm = container.querySelector(
