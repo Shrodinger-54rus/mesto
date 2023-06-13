@@ -12,7 +12,7 @@ import {
   inputAboutMe,
   profileName,
   profileJob,
-  editProfilePopup,
+  popupEditProfile,
   editProfileButton,
   addImagePopup,
   addImageButton,
@@ -37,10 +37,12 @@ const api = new Api({
   },
 })
 
+let myId
+
 const popupAddImage = new PopupWithForm(addImagePopup, (inputValues) => {
-  Promise.all([api.getUserInfo(), api.addNewCardImage(inputValues)])
-    .then(([userData, cardsData]) => {
-      cardsData.id = userData._id
+  api
+    .addNewCardImage(inputValues)
+    .then((cardsData) => {
       cardList.addItem(createNewCard(cardsData))
       popupAddImage.close()
     })
@@ -71,7 +73,7 @@ const popupEditAvatar = new PopupWithForm(avatarEditPopup, (inputValues) => {
     })
 })
 
-const popupUserInfo = new PopupWithForm(editProfilePopup, (inputValues) => {
+const popupUserInfo = new PopupWithForm(popupEditProfile, (inputValues) => {
   api
     .editUserInfo(inputValues)
     .then((res) => {
@@ -138,14 +140,15 @@ function createNewCard(cardData) {
           })
           .catch((error) => console.error(`Ошибка добавления лайка ${error}`))
       }
-    }
+    },
+    myId
   )
 
   return card.createCard()
 }
 
 const cardList = new Section((cardData) => {
-  cardList.addItem(createNewCard(cardData))
+  cardList.addItemAppend(createNewCard(cardData))
 }, cardsContainer)
 
 editProfileButton.addEventListener('click', () => {
@@ -179,16 +182,16 @@ popupConfirm.setEventListener()
 
 Promise.all([api.getUserInfo(), api.getInitialCards()])
   .then(([userData, cardsData]) => {
-    cardsData.forEach((element) => {
-      element.id = userData._id
-    })
-
     userInfo.setUserInfo({
       name: userData.name,
       job: userData.about,
       avatar: userData.avatar,
     })
 
-    cardList.renderItems(cardsData.reverse())
+    cardsData.forEach(() => {
+      myId = userData._id
+    })
+
+    cardList.renderItems(cardsData)
   })
   .catch((error) => console.error(`Ошибка при загрузке данных ${error}`))

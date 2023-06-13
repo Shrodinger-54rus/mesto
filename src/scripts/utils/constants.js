@@ -5,7 +5,7 @@ export const inputAboutMe = container.querySelector(
 )
 export const profileName = container.querySelector('.profile__title')
 export const profileJob = container.querySelector('.profile__subtitle')
-export const editProfilePopup = container.querySelector('.popup_edit-profile')
+export const popupEditProfile = container.querySelector('.popup_edit-profile')
 export const editProfileButton = container.querySelector('.profile__edit')
 export const addImagePopup = container.querySelector('.popup_add-image')
 export const addImageButton = container.querySelector('.profile__add')

@@ -4,18 +4,21 @@ export default class Card {
     templateSelector,
     handleCardClick,
     handleDeleteButtonClick,
-    like
+    like,
+    myId
   ) {
     this._data = data
-    this._id = data.id
-    this._ownerID = data.owner._id
-    this._likes = data.likes
-    this._likesLength = data.likes.length
     this._templateSelector = templateSelector
     this._handleCardClick = handleCardClick
     this._handleDeleteButtonClick = handleDeleteButtonClick
     this._like = like
+    this._myId = myId
+
     this._cardId = data._id
+    this._ownerID = data.owner._id
+    this._likes = data.likes
+    this._likesLength = data.likes.length
+
     this._cardElement = this._getCardElement()
     this._deleteButton = this._cardElement.querySelector(
       '.photo-grid__delete-button'
@@ -50,7 +53,7 @@ export default class Card {
   }
 
   _changeStateTrash() {
-    if (this._id === this._ownerID) {
+    if (this._myId === this._ownerID) {
       this._deleteButton.style.display = 'block'
     } else {
       this._deleteButton.style.display = 'none'
@@ -59,7 +62,7 @@ export default class Card {
 
   _checkLikeStatus() {
     this._likes.forEach((like) => {
-      if (like._id === this._id) {
+      if (like._myId === this._id) {
         this._likeButton.classList.add('photo-grid__like-button_active')
         return
       }
@@ -74,6 +77,7 @@ export default class Card {
 
   deleteCard() {
     this._cardElement.remove()
+    this._cardElement = null
   }
 
   createCard() {

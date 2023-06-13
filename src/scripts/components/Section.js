@@ -1,7 +1,7 @@
 export default class Section {
-  constructor(renderer, containerSelector) {
+  constructor(renderer, container) {
     this._renderer = renderer
-    this._container = containerSelector
+    this._container = container
   }
 
   renderItems(cardsData) {
@@ -12,5 +12,9 @@ export default class Section {
 
   addItem(card) {
     this._container.prepend(card)
+  }
+
+  addItemAppend(card) {
+    this._container.append(card)
   }
 }
