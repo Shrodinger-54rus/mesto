@@ -188,9 +188,7 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
       avatar: userData.avatar,
     })
 
-    cardsData.forEach(() => {
-      myId = userData._id
-    })
+    myId = userData._id
 
     cardList.renderItems(cardsData)
   })
