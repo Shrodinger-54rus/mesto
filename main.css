@@ -38,7 +38,7 @@
 .popup_opened{opacity:1;visibility:visible}
 .popup_add-image{background-color:#00000080}
 .popup_edit-profile{background-color:#00000080}
-.popup__error{color:red;font-size:12px;font-weight:400;line-height:14.52px;margin:5px 0 13px;padding:0;visibility:hidden}
+.popup__error{color:red;font-size:12px;font-weight:400;height:13px;line-height:14px;margin:5px 0 13px;padding:0;visibility:hidden}
 .popup__error_visible{visibility:visible}
 .popup__input_type_error{border-color:red}
 .popup_avatar{background-color:#00000080}
