@@ -2,8 +2,6 @@
 <h2 align="center">Курс "Веб-разработчик" Яндекс Практикума</h2>
 Mesto — веб-сервис, куда можно добавлять фотографии, удалять их и ставить лайки.
 
-![Демонстрация](./src/images/demo-readme.gif)
-
 ###### [Ссылка на GH-Pages](https://shrodinger-54rus.github.io/mesto/)
 
 ---
